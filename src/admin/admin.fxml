@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.AdminController">
+   <children>
+      <TabPane layoutX="-1.0" layoutY="-5.0" prefHeight="734.0" prefWidth="1286.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Employee">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="337.0" prefHeight="694.0" prefWidth="945.0">
+                           <children>
+                              <TableView fx:id="employeetable" prefHeight="694.0" prefWidth="953.0">
+                                <columns>
+                                  <TableColumn fx:id="idcolumn" prefWidth="33.9862060546875" text="ID" />
+                                    <TableColumn fx:id="firstnamecolumn" minWidth="0.0" prefWidth="152.01370239257812" text="First Name" />
+                                    <TableColumn fx:id="lastnamecolumn" minWidth="0.0" prefWidth="204.5880126953125" text="Last Name" />
+                                    <TableColumn fx:id="emailcolumn" minWidth="0.0" prefWidth="172.06585693359375" text="Email" />
+                                    <TableColumn fx:id="dobcolumn" minWidth="0.0" prefWidth="129.2279052734375" text="DoB" />
+                                    <TableColumn prefWidth="106.2171630859375" text="Password" />
+                                    <TableColumn prefWidth="141.9998779296875" text="Username" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox layoutY="5.0" prefHeight="686.0" prefWidth="338.0">
+                           <children>
+                              <Label prefHeight="17.0" prefWidth="344.0" text="Add Employee">
+                                 <padding>
+                                    <Insets left="50.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="id" promptText="ID">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="firstname" layoutX="10.0" layoutY="27.0" promptText="First Name">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="lastname" layoutX="10.0" layoutY="54.0" promptText="Last Name">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="email" layoutX="25.0" layoutY="111.0" promptText="Email">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <DatePicker fx:id="dob" prefHeight="27.0" prefWidth="346.0" promptText="Date Of Birth">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </DatePicker>
+                              <Button fx:id="addbutton" mnemonicParsing="false" onAction="#addEmployee" prefHeight="27.0" prefWidth="311.0" text="Add Entry">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="clearbutton" layoutX="25.0" layoutY="212.0" mnemonicParsing="false" onAction="#clearEmployeeForm" prefHeight="27.0" prefWidth="311.0" text="Clear Form">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="refreshbutton" layoutX="25.0" layoutY="249.0" mnemonicParsing="false" onAction="#loadEmployeeData" prefHeight="27.0" prefWidth="311.0" text="Refresh">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Region prefHeight="316.0" prefWidth="308.0" />
+                             
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Product">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="337.0" prefHeight="694.0" prefWidth="945.0">
+                           <children>
+                              <TableView fx:id="producttable" onMouseClicked="#onMouseClicked" prefHeight="694.0" prefWidth="953.0">
+                                 <columns>
+                                    <TableColumn fx:id="productnamecolumn" minWidth="0.0" prefWidth="186.82366943359375" text="Product name" />
+                                    <TableColumn fx:id="productlenghtcolumn" minWidth="0.0" prefWidth="186.82366943359375" text="lenght" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox layoutY="5.0" prefHeight="686.0" prefWidth="338.0">
+                           <children>
+                              <Label prefHeight="17.0" prefWidth="344.0" text="Add Product">
+                                 <padding>
+                                    <Insets left="50.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="productname" layoutX="10.0" layoutY="27.0" promptText="Product Name">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="productlenght" layoutX="25.0" layoutY="64.0" promptText="Lenght">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Button fx:id="addbutton1" mnemonicParsing="false" onAction="#addProduct" prefHeight="27.0" prefWidth="311.0" text="Add Entry">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="clearbutton1" layoutX="25.0" layoutY="212.0" mnemonicParsing="false" onAction="#clearProductForm" prefHeight="27.0" prefWidth="311.0" text="Clear Form">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="refreshproductbutton" layoutX="25.0" layoutY="249.0" mnemonicParsing="false" onAction="#loadProductData" prefHeight="27.0" prefWidth="311.0" text="Refresh">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Region prefHeight="316.0" prefWidth="308.0" />
+                           </children>
+                           <padding>
+                              <Insets bottom="15.0" left="15.0" right="15.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
